@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser  = require("body-parser");
-const loader = require('./web/userController')
+const loader = require('./node/web/userController')
 const app = express()
 const port = process.env.PORT || 8888
 const allowCrossDomain = function(req, res, next) {
@@ -13,7 +13,7 @@ const allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 app.use(bodyParser.urlencoded({ extended:false})); 
 app.use(bodyParser.json())
-app.use(express.static('page'))
+app.use(express.static('./node/page'))
 
 app.post('/login', (res,req)=>{
     loader.login(res.body,req)
