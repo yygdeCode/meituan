@@ -6,9 +6,12 @@ var instance = axios.create({
 })
 
 instance.interceptors.request.use(function (config) {
-  config.params = {
-    ...config.params,
-  }
+  let token = localStorage.getItem('token')
+  console.log(token)
+  config.headers.Authorization =  token
+  // config.params = {
+  //   ...config.params,
+  // }
   // 在发送请求之前做些什么
   return config
 }, function (error) {

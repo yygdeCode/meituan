@@ -46,9 +46,9 @@ export default {
                 userName: this.username,
                 password: this.password
             }).then(res => {
-                console.log(res.data.status)
+                console.log(res.data.token)
                 if (res.data.status == 'success') {
-                    this.$store.dispatch('setUser', this.username);
+                    this.$store.dispatch('setUser', {name : this.username,token : res.data.token});
                     this.$router.push({name:'index'})
                 }
             })

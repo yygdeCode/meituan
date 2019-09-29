@@ -9,6 +9,9 @@ import Register from '@/page/register.vue'
 import Login from '@/page/login.vue'
 Vue.use(Router)
 
+
+
+
 export default new Router({
   mode: 'history',
   routes: [

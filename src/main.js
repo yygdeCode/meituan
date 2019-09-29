@@ -11,6 +11,11 @@ import errImg from '@/static/img/err.jpg'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
+
+
+
+
+
 import VueLazyload from 'vue-lazyload'  //引入这个懒加载插件
 
 // 或者添加VueLazyload 选项

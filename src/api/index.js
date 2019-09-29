@@ -36,6 +36,9 @@ const api = {
   },
   getProducts(params) {
     return axios.get('/list/goodsList.json');
+  },
+  validate(){
+    return axios.get('./validate')
   }
 }
 

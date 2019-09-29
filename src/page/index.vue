@@ -22,6 +22,8 @@
     </div>
 </template>
 <script>
+import api from '@/api/index.js'
+
 import MMenu from '@/components/index/menu.vue'
 import MLife from '@/components/index/life.vue'
 import Container from '@/components/index/container.vue'
@@ -65,7 +67,12 @@ export default {
         }
     },
     created() {
-
+        api.validate().then(res=>{
+            console.log(res)
+            if (res.data.code == 0) {
+                    this.$store.dispatch('setUser', {name : res.data.username,token : res.data.token});
+                }
+        })
     },
     components: {
         MMenu,
